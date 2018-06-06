@@ -1,0 +1,19 @@
+.header{
+  display: flex;
+  padding: 10px;
+  background-color: #ddd;
+
+  &__menu{
+    display: flex;
+
+    &-item{
+      margin-right: 10px;
+      text-decoration: none;
+      font-size: $font-size-small;
+
+      &:focus{
+        border-bottom: 2px solid #E1312F;
+      }
+    }
+  }
+}
