@@ -1,11 +1,23 @@
+@import "./pagination.scss";
 .info{
   padding: 10px;
   display: flex;
-  flex-wrap: wrap;
-  width: 56%;
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    width: 57%;
+    margin-bottom: 10px;
+  }
 
   &__item{
-    height: 200px;
+    height: 175px;
     width: 350px;
     overflow: hidden;
     display: flex;
@@ -23,6 +35,53 @@
       display: flex;
       flex-direction: column;
       margin-left: 10px;
+      overflow: hidden;
+      width: 170px;
+
+      & > span{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 2px 0;
+      }
+    }
+  }
+
+  &__sort{
+    display: flex;
+    flex-direction: column;
+    border: 2px $tip-color solid;
+    width: 300px;
+    height: 150px;
+    position: fixed;
+    padding: 5px;
+    align-items: center;
+
+    &-button{
+      display: block;
+      box-sizing: border-box;
+      text-align: center;
+      height: 30px;
+      border-radius: $border-radius;
+      font-size: $font-size-small;
+      font-weight: $font-weight-medium;
+      cursor: pointer;
+      outline: none;
+      @extend %button-color-3;
+      width: 100px;
+      margin: 10px auto 0;
+    }
+
+    &-select{
+      width: 150px;
+      margin: 5px;
+    }
+    &-item{
+      display: flex;
+    }
+    &-label{
+      overflow: hidden;
+      width: 110px;
+      height: 40px;
     }
   }
 }

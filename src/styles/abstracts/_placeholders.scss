@@ -1,0 +1,10 @@
+%button-color-3 {
+  border: 2px solid $element-color;
+  background-color: $element-color;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: none;
+    border-color: $main-border-color;
+  }
+}
