@@ -5,6 +5,7 @@ import Pagination from "react-js-pagination";
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import {getAllEmployees} from "actions/employees";
+import {fields, typeOfSort} from './config';
 
 class Info extends React.Component {
 
@@ -17,42 +18,50 @@ class Info extends React.Component {
     }
 
     state = {
-        activePage: 1
+        activePage: 1,
+        sortConfig: {}
     }
 
     componentDidMount() {
         this.props.dispatch(getAllEmployees());
     }
 
-    handleChange(option) {
-        console.log(option);
+    makeSortConfig = (option, currentField) => {
+        this.setState((prevState) => ({
+            sortConfig: {
+                ...prevState.sortConfig,
+                [currentField]: option ? option.value : null
+            }
+        }));
+    }
+
+    changePage = (pageNumber) => {
+        this.setState({activePage: pageNumber});
+        this.props.dispatch(getAllEmployees(pageNumber));
+    }
+
+    sortItems = () => {
+        const {activePage,sortConfig} = this.state;
+        this.props.dispatch(getAllEmployees(activePage,sortConfig));
     }
 
     render() {
-        const fields = [
-            {value: 'name', label: 'Name'},
-            {value: 'surname', label: 'Surname'},
-            {value: 'email', label: 'Email'},
-            {value: 'company', label: 'Company'},
-            {value: 'adress', label: 'Adress'},
-            {value: 'phone', label: 'Phone'},
-        ];
-        const typeOfSort = [
-            {value: 'asc', label: 'Ascending'},
-            {value: 'desc', label: 'Descending'}
-        ];
+        const {sortConfig} = this.state;
+
         return (
             <div className='info'>
                 <div className="info__sort">
                     <div className='info__sort-item'>
-                        <div className='info__sort-label'>Choose variable to sort: </div>
-                        <Select onChange={this.handleChange} options={fields} className='info__sort-select'  placeholder='Choose item...'/>
+                        <div className='info__sort-label'>Choose variable to sort:</div>
+                        <Select onChange={(option) => this.makeSortConfig(option, 'field')} options={fields} value={sortConfig['field']}
+                                className='info__sort-select' placeholder='Choose item...'/>
                     </div>
                     <div className='info__sort-item'>
-                        <div className='info__sort-label'>Choose order to sort: </div>
-                        <Select onChange={this.handleChange} options={typeOfSort} className='info__sort-select' placeholder='Choose item...'/>
+                        <div className='info__sort-label'>Choose order to sort:</div>
+                        <Select onChange={(option) => this.makeSortConfig(option, 'type')} options={typeOfSort} value={sortConfig['type']}
+                                className='info__sort-select' placeholder='Choose item...'/>
                     </div>
-                    <button className="info__sort-button" type="submit">Sort!</button>
+                    <button className="info__sort-button" type="submit" onClick={this.sortItems}>Sort!</button>
                 </div>
                 <div className="info__content">
                     <div className="info__items">
@@ -79,7 +88,7 @@ class Info extends React.Component {
                         pageRangeDisplayed={5}
                         itemClass='page-item'
                         linkClass='page-link'
-                        onChange={(pageNumber) => this.setState({activePage: pageNumber})}
+                        onChange={(pageNumber) => this.changePage(pageNumber)}
                     />
                 </div>
             </div>
