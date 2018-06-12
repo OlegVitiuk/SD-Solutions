@@ -14,14 +14,28 @@ class Info extends React.Component {
     }
 
     componentDidMount() {
-        //this.props.dispatch(getAllEmployees());
+        this.props.dispatch(getAllEmployees());
     }
 
 
     render() {
         return (
-            <div >
-                <h1>Info</h1>
+            <div className='info'>
+                {
+                    this.props.employees.map(employee =>(
+                        <div className='info__item' key={employee.id}>
+                            <img src={employee.avatar} alt="avatar" className='info__item-avatar'/>
+                            <div className='info__item-content'>
+                                <span className='info__item-name' >{employee.first_name}</span>
+                                <span className='info__item-surmame' >{employee.last_name}</span>
+                                <span className='info__item-email'>{employee.email}</span>
+                                <span className='info__item-company'>{employee.company}</span>
+                                <span className='info__item-adress'>{employee.adress}</span>
+                                <span className='info__item-phone'>{employee.phone}</span>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         );
     }

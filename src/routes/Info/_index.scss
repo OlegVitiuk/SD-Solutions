@@ -1,15 +1,28 @@
-.doc__list{
+.info{
+  padding: 10px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+  flex-wrap: wrap;
+  width: 56%;
 
-.doctors{
-  box-sizing: border-box;
-  padding: 20px 30px;
-  background-color: #ececec;
-  height: 100%;
-  position: relative;
-  padding-bottom: 90px;
-  z-index: 0;
+  &__item{
+    height: 200px;
+    width: 350px;
+    overflow: hidden;
+    display: flex;
+    border: 2px $tip-color solid;
+    align-items: center;
+    margin: 10px;
+
+    &-avatar{
+      width: 150px;
+      height: 150px;
+      background-origin:content-box;
+    }
+
+    &-content{
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+  }
 }

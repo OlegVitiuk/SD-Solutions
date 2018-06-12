@@ -46,19 +46,6 @@ $tag-border: 1px solid rgba(0, 126, 255, 0.24);
 
 $error-color: #ff1400;
 
-$shadow-1: 0 0 40px 2px rgba(255, 255, 255, 0.6);
-$shadow-2: 1px 5px 30px 0 #ccd0d9, inset 0 -1px 0 0 #ebebeb;
-$shadow-3: 0 -3px 4px 0 rgba(184, 184, 184, 0.5);
-$shadow-4: 0 2px 9px 0 rgba(0, 0, 0, 0.03);
-
-
-
-
-
-// ----- position ------
-
-$center: 0 auto;
-
 // ------ params ----
 $border-radius: 5px;
 $border-radius-2: 4px;
@@ -83,24 +70,3 @@ $font-size-small: 16px;
 $font-size-smaller: 14px;
 $font-size-extra-small: 13px;
 
-$font-size-error-text: 12px;
-
-$font-size-close-button: 8px;
-
-// ----- placeholder ---
-$placeholder-color: #dddcdc;
-$font-placeholder: $font-weight-normal 15px/1.57 sans-serif;
-
-// ----- screens ------
-$small-screens: 479px;
-$middle-screens: 768px;
-$large-screens: 993px;
-$extra-screens: 820px;
-
-// ---- z-index -----
-$z-index-header-clients: 3;
-$z-index-header-menu: 2;
-$z-index-header: 4;
-$z-index-notification: 20;
-$z-index-overlay: 11;
-$z-index-loader: 6;

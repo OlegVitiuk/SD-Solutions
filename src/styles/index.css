@@ -4,6 +4,9 @@ body {
   box-sizing: border-box;
   overflow-y: auto; }
 
+span, h1, h2, h3, h4, a {
+  font-family: 'ProximaNova', sans-serif; }
+
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/Flaticon.woff") format("embedded-opentype"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
@@ -85,19 +88,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.doc__list {
+.info {
+  padding: 10px;
   display: flex;
-  justify-content: center;
-  flex-direction: column; }
-
-.doctors {
-  box-sizing: border-box;
-  padding: 20px 30px;
-  background-color: #ececec;
-  height: 100%;
-  position: relative;
-  padding-bottom: 90px;
-  z-index: 0; }
+  flex-wrap: wrap;
+  width: 56%; }
+  .info__item {
+    height: 200px;
+    width: 350px;
+    overflow: hidden;
+    display: flex;
+    border: 2px #ffafb9 solid;
+    align-items: center;
+    margin: 10px; }
+    .info__item-avatar {
+      width: 150px;
+      height: 150px;
+      background-origin: content-box; }
+    .info__item-content {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px; }
 
 .header {
   display: flex;
@@ -109,5 +120,3 @@ table {
       margin-right: 10px;
       text-decoration: none;
       font-size: 16px; }
-      .header__menu-item:focus {
-        border-bottom: 2px solid #E1312F; }
