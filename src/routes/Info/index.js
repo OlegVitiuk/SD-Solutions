@@ -23,7 +23,7 @@ class Info extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(getEmployees());
+        this.props.dispatch(getEmployees(this.state.activePage));
     }
 
     makeSortConfig = (option, currentField) => {
