@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .info__sort-button {
   border: 2px solid #ffc410;
@@ -10,44 +9,17 @@
 
 body {
   box-sizing: border-box;
-  overflow-y: auto; }
+  overflow-y: auto;
+  width: 1349px; }
 
 span, h1, h2, h3, h4, a {
-  font-family: 'ProximaNova', sans-serif; }
-
-@font-face {
-  font-family: "Flaticon";
-  src: url("../fonts/Flaticon.woff") format("embedded-opentype"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
-  font-weight: 500;
-  font-style: normal; }
+  font-family: "ProximaNova", sans-serif; }
 
 @font-face {
   font-family: "ProximaNova";
   src: url("../fonts/ProximaNova-Light.woff") format("embedded-opentype"), url("../fonts/ProximaNova-Light.woff") format("woff"), url("../fonts/ProximaNova-Light.ttf") format("truetype");
   font-weight: 500;
   font-style: normal; }
-
-.star-full:before, .star-empty:before {
-  display: inline-block;
-  font-family: "Flaticon";
-  font-style: normal;
-  font-weight: 500;
-  font-variant: normal;
-  line-height: 1;
-  text-decoration: inherit;
-  text-rendering: optimizeLegibility;
-  text-transform: none;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased; }
-
-.star-full:before {
-  content: ""; }
-
-.star-empty:before {
-  content: ""; }
-
-.star-full {
-  color: #ffc410; }
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -241,6 +213,12 @@ table {
       overflow: hidden;
       width: 110px;
       height: 40px; }
+
+.about {
+  padding: 10px; }
+  .about__img {
+    width: 700px;
+    height: 900px; }
 
 .header {
   display: flex;

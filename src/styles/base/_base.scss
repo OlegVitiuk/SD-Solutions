@@ -1,9 +1,10 @@
 body{
   box-sizing: border-box;
   overflow-y: auto;
+  width: 1349px;
 }
 
 span, h1, h2,h3,h4,a{
-  font-family: 'ProximaNova', sans-serif;
+  font-family: $font-family-primary;
 }
 
